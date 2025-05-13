@@ -53,7 +53,7 @@ class TestHousingPriority(unittest.TestCase):
     def test_calculate_score(self, mock_additional, mock_credits, mock_grad, mock_year):
         # Based on mocks:
         #   year=4 → 4pts, grad=True → 1pt, credits=16//8=2pts, additional={'honors':True}→2pts
-        # Total = 4+1+2+2 = 9
+        # Total = 4+1+2+2 = 9 (This is just an example scoring system, you will have to make your own.)
         expected = 9
         self.assertEqual(calculate_score(), expected)
 
