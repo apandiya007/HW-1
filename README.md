@@ -1,5 +1,3 @@
-# fa25-hw1-algodecisionmakers-handout
-
 # HW 1: Housing Priority Calculator
 
 ## Overview
