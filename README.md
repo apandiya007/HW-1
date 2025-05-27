@@ -1,5 +1,12 @@
 # HW 1: Housing Priority Calculator
 
+## Learning Outcomes
+
+- Practice reading and contributing to existing starter code
+- Practice writing functions in Python with type annotations, documentation, and tests
+- Writing a classe in Python
+- Reading and writing text files
+
 ## Overview
 
 Welcome to your first programming assignment of the semester! In this assignment you will be building a housing “priority score” engine in Python that decides who gets the first pick of campus housing.  You’ll dive into human-centered design—chatting with users, uncovering their needs, and iterating on your plan—while mastering Python basics: grabbing input, crafting if/elif/else logic, performing arithmetic, and tallying up points. From initial brainstorming through prototyping to user testing and reflection, you’ll sharpen both your empathy for real users and your fluency in Python—skills that will power every project you take on next. You will use the provided scaffold (`hw1.py`) which contains separate methods for:
