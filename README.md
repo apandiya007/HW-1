@@ -1,6 +1,11 @@
-# fa25-hw1-algodecisionmakers-handout
-
 # HW 1: Housing Priority Calculator
+
+## Learning Outcomes
+
+- Practice reading and contributing to existing starter code
+- Practice writing functions in Python with type annotations, documentation, and tests
+- Writing a classe in Python
+- Reading and writing text files
 
 ## Overview
 
