@@ -7,10 +7,12 @@ This module contains the HousingQuestionAsker class responsible for gathering us
 Implement each method as described in the handout.
 """
 
+from typing import Dict
+
 class HousingQuestionAsker:
     """Class responsible for asking questions and gathering user input."""
     
-    def ask_class_year(self):
+    def ask_class_year(self) -> int:
         """TODO: Ask the student for their class year and return it as int.
         Example Prompts:
           - What is your class year? (1=Freshman, 2=Sophomore, 3=Junior, 4=Senior)
@@ -18,7 +20,7 @@ class HousingQuestionAsker:
         # TODO: implement input parsing and validation
         pass
 
-    def ask_graduation_status(self):
+    def ask_graduation_status(self) -> bool:
         """TODO: Ask if the student is graduating this semester, this question must ONLY appear if the student is a senior. Return True for 'y', False for 'n'.
         Example Prompt:
           - Are you graduating this semester? (y/n)
@@ -26,7 +28,7 @@ class HousingQuestionAsker:
         # TODO: implement input loop and return boolean ('y' = TRUE, 'n' = FALSE)
         pass
 
-    def ask_credits_earned(self):
+    def ask_credits_earned(self) -> int:
         """TODO: Ask for credits earned and return as int.
         Prompt:
           - How many credits have you earned?
@@ -34,7 +36,7 @@ class HousingQuestionAsker:
         # TODO: implement input to get the number of credits earned
         pass
 
-    def ask_additional_questions(self):
+    def ask_additional_questions(self) -> Dict[str, bool]:
         """TODO: Ask at least two yes/no prompts and return a dict of responses.
         Example keys:
           - 'old23': Are you older than 23? (y/n)

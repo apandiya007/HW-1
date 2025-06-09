@@ -6,7 +6,8 @@ Tests the main calculate_score function that coordinates both classes.
 """
 
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
+from typing import Dict
 from hw1 import calculate_score
 from question_asker import HousingQuestionAsker
 from priority_calculator import HousingPriorityCalculator
@@ -37,7 +38,7 @@ class TestHousingPriorityIntegration(unittest.TestCase):
     @patch.object(HousingQuestionAsker, 'ask_graduation_status', return_value=True)
     @patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=16)
     @patch.object(HousingQuestionAsker, 'ask_additional_questions', return_value={'old23': False, 'honors': True})
-    def test_calculate_score_senior_graduating(self, mock_additional, mock_credits, mock_grad, mock_year):
+    def test_calculate_score_senior_graduating(self, mock_additional: MagicMock, mock_credits: MagicMock, mock_grad: MagicMock, mock_year: MagicMock) -> None:
         """TODO: Test calculate_score for a graduating senior."""
         # Based on mocks:
         #   year=4 → X pts, grad=True → Y pts, credits=16 → Z pts, additional={'honors':True} → W pts
@@ -54,7 +55,7 @@ class TestHousingPriorityIntegration(unittest.TestCase):
     @patch.object(HousingQuestionAsker, 'ask_class_year', return_value=1) 
     @patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=8)
     @patch.object(HousingQuestionAsker, 'ask_additional_questions', return_value={'old23': False, 'honors': False})
-    def test_calculate_score_freshman(self, mock_additional, mock_credits, mock_year):
+    def test_calculate_score_freshman(self, mock_additional: MagicMock, mock_credits: MagicMock, mock_year: MagicMock) -> None:
         """TODO: Test calculate_score for a freshman (no graduation question should be asked)."""
         # Note: ask_graduation_status should NOT be called for freshman
         # Based on mocks:
@@ -72,7 +73,7 @@ class TestHousingPriorityIntegration(unittest.TestCase):
     @patch.object(HousingQuestionAsker, 'ask_graduation_status', return_value=False)
     @patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=20)
     @patch.object(HousingQuestionAsker, 'ask_additional_questions', return_value={'old23': True, 'honors': False})
-    def test_calculate_score_senior_not_graduating(self, mock_additional, mock_credits, mock_grad, mock_year):
+    def test_calculate_score_senior_not_graduating(self, mock_additional: MagicMock, mock_credits: MagicMock, mock_grad: MagicMock, mock_year: MagicMock) -> None:
         """TODO: Test calculate_score for a non-graduating senior."""
         expected = 7  # TODO: Update this based on your actual point system
         
@@ -84,7 +85,7 @@ class TestHousingPriorityIntegration(unittest.TestCase):
     @patch.object(HousingQuestionAsker, 'ask_class_year', return_value=3) 
     @patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=12)
     @patch.object(HousingQuestionAsker, 'ask_additional_questions', return_value={'old23': True, 'honors': True})
-    def test_calculate_score_junior(self, mock_additional, mock_credits, mock_year):
+    def test_calculate_score_junior(self, mock_additional: MagicMock, mock_credits: MagicMock, mock_year: MagicMock) -> None:
         """TODO: Test calculate_score for a junior (no graduation question should be asked)."""
         expected = 8  # TODO: Update this based on your actual point system
         
@@ -93,7 +94,7 @@ class TestHousingPriorityIntegration(unittest.TestCase):
         # self.assertEqual(result, expected)
         pass
 
-    def test_graduation_question_only_for_seniors(self):
+    def test_graduation_question_only_for_seniors(self) -> None:
         """TODO: Test that graduation status is only asked for seniors."""
         # This test should verify that ask_graduation_status is only called when class year is 4
         # You might want to use patch to track method calls

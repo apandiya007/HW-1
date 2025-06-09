@@ -11,7 +11,7 @@ from question_asker import HousingQuestionAsker
 from priority_calculator import HousingPriorityCalculator
 
 
-def calculate_score():
+def calculate_score() -> int:
     """TODO: Orchestrate all steps using both classes:
       1) Create instances of HousingQuestionAsker and HousingPriorityCalculator
       2) Use HousingQuestionAsker to gather all information
@@ -23,7 +23,7 @@ def calculate_score():
     pass
 
 
-def main():
+def main() -> None:
     """Entry point: print header, compute score, print footer. (For easier readability)"""
     # TODO: implement
     pass
