@@ -18,99 +18,113 @@ class TestHousingPriorityCalculator(unittest.TestCase):
 
     def test_points_for_class_year_freshman(self) -> None:
         """TODO: Test points_for_class_year for freshman (year 1)."""
-        # TODO: Test that year 1 returns expected points
-        # Example:
-        # result = self.priority_calculator.points_for_class_year(1)
-        # self.assertEqual(result, expected_points_for_freshman)
+        # TODO: Based on YOUR scoring system, what should freshman get?
+        # If your system gives freshman 10 points, then:
+        # expected_points = 10
+        
+        # WRITE YOUR TEST HERE FIRST, THEN IMPLEMENT THE METHOD
         pass
 
     def test_points_for_class_year_sophomore(self) -> None:
         """TODO: Test points_for_class_year for sophomore (year 2)."""
-        # TODO: Test that year 2 returns expected points
+        # TODO: Based on YOUR scoring system, what should sophomores get?
+        # WRITE YOUR TEST HERE FIRST, THEN IMPLEMENT THE METHOD
         pass
 
     def test_points_for_class_year_junior(self) -> None:
         """TODO: Test points_for_class_year for junior (year 3)."""
-        # TODO: Test that year 3 returns expected points
+        # TODO: Based on YOUR scoring system, what should juniors get?
+        # WRITE YOUR TEST HERE FIRST, THEN IMPLEMENT THE METHOD
         pass
 
     def test_points_for_class_year_senior(self) -> None:
         """TODO: Test points_for_class_year for senior (year 4)."""
-        # TODO: Test that year 4 returns expected points
+        # TODO: Based on YOUR scoring system, what should seniors get?
+        # WRITE YOUR TEST HERE FIRST, THEN IMPLEMENT THE METHOD
         pass
 
     def test_points_for_class_year_invalid(self) -> None:
         """TODO: Test points_for_class_year with invalid year."""
-        # TODO: Test behavior with year outside 1-4 range
-        # You might return 0 points or raise an exception - document your choice
+        # TODO: What should happen with year 0 or year 5?
+        # Should you return 0 points or raise an exception?
         pass
 
     def test_points_for_graduation_true(self) -> None:
         """TODO: Test points_for_graduation when graduating."""
-        # TODO: Test that True returns expected points for graduating students
+        # TODO: How many points should graduating students get?
         pass
 
     def test_points_for_graduation_false(self) -> None:
         """TODO: Test points_for_graduation when not graduating."""
-        # TODO: Test that False returns expected points for non-graduating students
+        # TODO: How many points should non-graduating students get?
         pass
 
     def test_points_for_credits_zero(self) -> None:
         """TODO: Test points_for_credits with 0 credits."""
-        # TODO: Test scoring for 0 credits
+        # TODO: What should 0 credits give? Usually 0 points.
+        # result = self.priority_calculator.points_for_credits(0)
+        # self.assertEqual(result, 0)
         pass
 
     def test_points_for_credits_low(self) -> None:
         """TODO: Test points_for_credits with low credit count (e.g., 7)."""
-        # TODO: Test scoring for low credit count
-        pass
 
     def test_points_for_credits_medium(self) -> None:
         """TODO: Test points_for_credits with medium credit count (e.g., 15)."""
-        # TODO: Test scoring for medium credit count
+        # TODO: Test your scoring system with 15 credits
         pass
 
     def test_points_for_credits_high(self) -> None:
         """TODO: Test points_for_credits with high credit count (e.g., 30)."""
-        # TODO: Test scoring for high credit count
+        # TODO: Test your scoring system with 30 credits
         pass
 
     def test_points_for_additional_questions_all_true(self) -> None:
         """TODO: Test points_for_additional_questions with all True responses."""
-        # TODO: Test with responses like {'old23': True, 'honors': True}
+        # TODO: Based on YOUR additional questions and scoring:
+        # If you ask 'old23' (2 pts) and 'honors' (3 pts):
+        # responses = {'old23': True, 'honors': True}
         pass
 
     def test_points_for_additional_questions_all_false(self) -> None:
         """TODO: Test points_for_additional_questions with all False responses."""
-        # TODO: Test with responses like {'old23': False, 'honors': False}
+        # TODO: Usually all False should give 0 points:
+        # responses = {'old23': False, 'honors': False}
         pass
 
     def test_points_for_additional_questions_mixed(self) -> None:
         """TODO: Test points_for_additional_questions with mixed responses."""
-        # TODO: Test with responses like {'old23': True, 'honors': False}
+        # TODO: Test partial points:
+        # responses = {'old23': True, 'honors': False}
         pass
 
     def test_calculate_total_score_freshman_scenario(self) -> None:
         """TODO: Test calculate_total_score for a freshman scenario."""
-        # TODO: Test with year=1, is_graduating=False, credits=8, additional_responses={'old23': False, 'honors': True}
-        # Calculate expected total based on your scoring system
+        # TODO: Calculate expected total based on YOUR scoring system
+        # Example scenario: year=1, is_graduating=False, credits=8, additional_responses={'old23': False, 'honors': True}
+        # If your system: freshman=10pts, not_graduating=0pts, credits=8pts, honors_only=3pts
+        # expected_total = 10 + 0 + 8 + 3 = 21
         pass
 
     def test_calculate_total_score_senior_graduating_scenario(self) -> None:
         """TODO: Test calculate_total_score for a graduating senior scenario."""
-        # TODO: Test with year=4, is_graduating=True, credits=16, additional_responses={'old23': True, 'honors': True}
-        # Calculate expected total based on your scoring system
+        # TODO: Calculate expected total for: year=4, is_graduating=True, credits=16, additional_responses={'old23': True, 'honors': True}
+        # Work out the math based on YOUR scoring system first!
         pass
 
     def test_calculate_total_score_senior_non_graduating_scenario(self) -> None:
         """TODO: Test calculate_total_score for a non-graduating senior scenario."""
-        # TODO: Test with year=4, is_graduating=False, credits=20, additional_responses={'old23': False, 'honors': False}
-        # Calculate expected total based on your scoring system
+        # TODO: Calculate expected total for: year=4, is_graduating=False, credits=20, additional_responses={'old23': False, 'honors': False}
+        # Work out the math based on YOUR scoring system first!
         pass
 
     def test_calculate_total_score_edge_cases(self) -> None:
         """TODO: Test calculate_total_score with edge cases."""
-        # TODO: Test with unusual combinations like very high credits, invalid years, etc.
+        # TODO: Test unusual combinations:
+        # - Very high credits (e.g., 150)
+        # - Invalid years (if your method handles them)
+        # - Empty additional_responses dict
+        # - Negative credits (should this be allowed?)
         pass
 
 

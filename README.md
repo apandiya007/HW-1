@@ -1,81 +1,104 @@
 # HW 1: Housing Priority Calculator
 
 ## Learning Outcomes
-- Practice reading and contributing to existing starter code
+- Practice Test-Driven Development (TDD) methodology
 - Practice writing functions in Python with type annotations, documentation, and tests
 - Writing classes in Python with proper separation of concerns
 - Understanding object-oriented design principles
 - Reading and writing text files
+- Learning to write tests that define requirements before implementation
 
 ## Overview
-Welcome to your first programming assignment of the semester! In this assignment you will be building a housing "priority score" engine in Python that decides who gets the first pick of campus housing. You'll dive into human-centered design—chatting with users, uncovering their needs, and iterating on your plan—while mastering Python basics: grabbing input, crafting if/elif/else logic, performing arithmetic, and tallying up points. From initial brainstorming through prototyping to user testing and reflection, you'll sharpen both your empathy for real users and your fluency in Python—skills that will power every project you take on next.
+Welcome to your first programming assignment of the semester! In this assignment you will be building a housing "priority score" engine in Python that decides who gets the first pick of campus housing. You'll dive into human-centered design—chatting with users, uncovering their needs, and iterating on your plan—while mastering Python basics: grabbing input, crafting if/elif/else logic, performing arithmetic, and tallying up points.
+
+**Important: This assignment follows Test-Driven Development (TDD) principles. You will write your tests FIRST, then implement the code to make those tests pass.**
 
 This assignment introduces you to **object-oriented programming** by separating functionality into two distinct classes:
 
 ### File Structure
-1. **`question_asker.py`** - Contains the `HousingQuestionAsker` class
+1. **`question_asker.py`** - Contains the `HousingQuestionAsker` class (skeleton provided)
    * `ask_class_year()`
    * `ask_graduation_status()`
    * `ask_credits_earned()`
    * `ask_additional_questions()`
 
-2. **`priority_calculator.py`** - Contains the `HousingPriorityCalculator` class
+2. **`priority_calculator.py`** - Contains the `HousingPriorityCalculator` class (skeleton provided)
    * `points_for_class_year(year)`
    * `points_for_graduation(is_graduating)`
    * `points_for_credits(credits)`
    * `points_for_additional_questions(responses)`
    * `calculate_total_score(year, is_graduating, credits, additional_responses)`
 
-3. **`hw1.py`** - Main orchestration file
+3. **`hw1.py`** - Main orchestration file (skeleton provided)
    * `calculate_score()` - coordinates both classes
    * `main()` - entry point
 
-## Your Tasks:
+## Your Tasks (TDD Approach):
 
-### Part 1: Understanding and Running the Code
-1. **Read** through all three Python files to understand how the classes work together.
-2. **Implement** all the methods in both classes according to the TODO instructions.
-3. **Implement** the coordination logic in `hw1.py` that uses both classes together.
-4. **Run** the script in your terminal (once you have completed the assignment):
-   ```bash
-   python3 hw1.py
-   ```
-5. **Interact** with the prompts to observe how your inputs affect the final score.
+### Part 1: Design Your Scoring System
+1. **Decide** on your scoring system for each component:
+   - How many points for each class year (1-4)?
+   - How many points for graduating vs. not graduating?
+   - How many points per credit hour?
+   - What additional questions will you ask and how many points each?
+2. **Document** your scoring system in `SUMMARY.md` - you'll need this for writing tests!
 
-### Part 2: Writing Unit Tests
-Writing tests is a very important part of programming and a very essential skill. You will write tests for both classes and the main coordination function.
+### Part 2: Write Tests FIRST 
+**Before implementing any methods**, complete all the TODO items in the test files:
 
-#### Test Files Structure:
-1. **`test_question_asker.py`** - Tests for the `HousingQuestionAsker` class
-   * Test input validation and error handling
-   * Use `@patch('builtins.input')` to mock user input
-   * Test that methods return correct data types
+#### 2a. Complete `test_question_asker.py`
+- **Write tests** for input validation and error handling
+- **Test** that methods return correct data types
+- **Test** invalid input followed by valid input scenarios
+- **Use `@patch('builtins.input')`** to mock user input
 
-2. **`test_priority_calculator.py`** - Tests for the `HousingPriorityCalculator` class
-   * **`points_for_class_year`**: check values for years 1–4 and edge cases
-   * **`points_for_graduation`**: ensure logic works correctly (e.g., `True` ↦ X points, `False` ↦ Y points)
-   * **`points_for_credits`**: test if the number of points per credit is calculated correctly
-   * **`points_for_additional_questions`**: test correct points for specific user responses
-   * **`calculate_total_score`**: test with various combinations of inputs
+#### 2b. Complete `test_priority_calculator.py`
+- **Write specific test cases** based on your scoring system
+- **Fill in expected values** for each test method
+- **Test edge cases** (invalid years, negative credits, etc.)
+- **Run tests** - they should all fail initially (this is expected!)
 
-3. **`test_hw1.py`** - Integration tests for the main coordination function
-   * **`calculate_score`**: use `unittest.mock.patch` with `@patch.object()` to simulate all inputs and verify the total
-   * Test that graduation questions are only asked for seniors
-   * Test different scenarios (freshman, senior graduating, senior not graduating, etc.)
+#### 2c. Complete `test_hw1.py`
+- **Write integration tests** for the main coordination function
+- **Use `@patch.object()`** to simulate all inputs and verify totals
+- **Test** that graduation questions are only asked for seniors
+- **Test** different scenarios (freshman, senior graduating, etc.)
 
-### Part 3: Extending Additional Questions
-* **Modify** `ask_additional_questions()` in the `HousingQuestionAsker` class to include at least two new yes/no prompts (e.g., older than 23?, honors student?).
-* **Update** `points_for_additional_questions()` in the `HousingPriorityCalculator` class to assign distinct point values (e.g., 2 for student older than 23, 2 for honors).
-* **Write** matching tests in both test files according to your questions.
-* **Return** a dictionary where each key corresponds to a question and the value is a boolean (`True`/`False`).
+### Part 3: Implement Methods to Make Tests Pass
+Now implement the actual methods in the order that makes sense:
 
-### Part 4: Class Coordination
-* **Implement** the `calculate_score()` function in `hw1.py` to:
-  1. Create instances of both classes
-  2. Use `HousingQuestionAsker` to gather all user input
-  3. Use `HousingPriorityCalculator` to compute the final score
-  4. Handle the logic for only asking graduation status if the student is a senior
-  5. Return the total score
+#### 3a. Implement `question_asker.py`
+- **Implement input validation** and error handling
+- **Run tests**: `python3 -m pytest test_question_asker.py -v`
+- **Handle edge cases** like invalid input followed by valid input
+
+#### 3b. Implement `priority_calculator.py`
+- **Implement each method** according to your scoring system
+- **Run tests frequently**: `python3 -m pytest test_priority_calculator.py -v`
+- **Make sure each test passes** before moving to the next method
+
+
+#### 3c. Implement `hw1.py`
+- **Implement the coordination logic** between both classes
+- **Run integration tests**: `python3 -m pytest test_hw1.py -v`
+- **Make sure graduation questions are only asked for seniors**
+
+### Part 4: Extending Additional Questions
+* **Add at least two new yes/no prompts** (e.g., older than 23?, honors student?)
+* **Update your tests first** to include these new questions
+* **Then implement** the functionality to make tests pass
+* **Return** a dictionary where each key corresponds to a question and the value is a boolean
+
+### Part 5: Final Testing and Integration
+* **Run all tests** to ensure everything works together:
+  ```bash
+  python3 -m pytest -v
+  ```
+* **Test the actual program**:
+  ```bash
+  python3 hw1.py
+  ```
+* **Verify** that your inputs produce the expected scores according to your test cases
 
 ## Running Tests
 You can run tests for individual components:
@@ -92,20 +115,21 @@ python3 -m pytest -v
 
 ## Submission Instructions
 1. **Push** all files to your repository:
-   * `question_asker.py`
-   * `priority_calculator.py` 
-   * `hw1.py`
-   * `test_question_asker.py`
-   * `test_priority_calculator.py`
-   * `test_hw1.py`
-   * `SUMMARY.md` (completed)
+   * `question_asker.py` (fully implemented)
+   * `priority_calculator.py` (fully implemented)
+   * `hw1.py` (fully implemented)
+   * `test_question_asker.py` (fully implemented)
+   * `test_priority_calculator.py` (fully implemented)
+   * `test_hw1.py` (fully implemented)
+   * `SUMMARY.md` (completed with scoring rationale)
+
 2. **Submit** the repository link on Canvas.
 
 ## Grading Rubric
-- **Implementation**: All methods work correctly and handle edge cases
-- **Object-Oriented Design**: Proper separation of concerns between classes
-- **Testing**: Comprehensive unit tests and integration tests
-- **Code Quality**: Clean, readable code with good practices
-- **Documentation**: Complete SUMMARY.md with scoring rationale
+- **Test Quality**: Comprehensive, well-designed tests that cover edge cases (30%)
+- **TDD Process**: Evidence of writing tests before implementation (20%)
+- **Implementation**: All methods work correctly and make tests pass (25%)
+- **Object-Oriented Design**: Proper separation of concerns between classes (15%)
+- **Documentation**: Complete SUMMARY.md with clear scoring rationale (10%)
 
 Feel free to ask questions on Piazza if anything is unclear. Good luck!
