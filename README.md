@@ -107,14 +107,14 @@ Now implement the actual methods in the order that makes sense:
 ## Running Tests
 While you are completing the test files, you may want to run individual test files at a time, instead of running them all at once. To do this, you can run test_runner.py with the -t option in your terminal to only run tests in the files you specify. Note: the test file names you provide must exist in the tests/ directory, or they won't run. 
 
-  Example command to only run tests in test_hw1.py
+  Example command to only run tests in test_hw1.py:
   ```python3 test_runner.py -t test_hw1.py```
 
   You can also run multiple test files by listing the file names after the -t option. 
-  Example command: 
+  Example command to run multiple test files: 
   ```python3 test_runner.py -t test_hw1.py test_priority_calculator.py```
 
-  If you just want to run all tests in the tests/ directory, you can run `python3 test_runner.py` omitting the `-t` flag at the end. This will run all test files with the pattern `test_*.py` inside of the tests/ directory. Make sure all your test file names start with `test_`, or else they will not run
+  If you just want to run all tests in the tests/ directory, you can run `python3 test_runner.py` omitting the `-t` flag at the end. This will run all test files with the pattern `test_*.py` inside of the tests/ directory. Make sure all your test file names start with `test_`, or else they will not run.
 
 ## Submission Instructions
 1. **Push** all files to your repository:
