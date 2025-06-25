@@ -2,18 +2,16 @@
 
 ## Learning Outcomes
 - Practice Test-Driven Development (TDD) methodology
-- Practice writing functions in Python with type annotations, documentation, and tests
-- Writing classes in Python with proper separation of concerns
+- Practice designing functions in Python with type annotations, documentation, and tests
+- Developing classes in Python with proper separation of concerns
 - Understanding object-oriented design principles
 - Reading and writing text files
-- Learning to write tests that define requirements before implementation
 
 ## Overview
 Welcome to your first programming assignment of the semester! In this assignment you will be building a housing "priority score" engine in Python that decides who gets the first pick of campus housing. You'll dive into human-centered design—chatting with users, uncovering their needs, and iterating on your plan—while mastering Python basics: grabbing input, crafting if/elif/else logic, performing arithmetic, and tallying up points.
 
-**Important: This assignment follows Test-Driven Development (TDD) principles. You will write your tests FIRST, then implement the code to make those tests pass.**
 
-This assignment introduces you to **object-oriented programming** by separating functionality into two distinct classes:
+This assignment introduces you to **object-oriented programming** by separating functionality into distinct classes:
 
 ### File Structure
 1. **`question_asker.py`** - Contains the `HousingQuestionAsker` class (skeleton provided)
@@ -33,27 +31,42 @@ This assignment introduces you to **object-oriented programming** by separating 
    * `calculate_score()` - coordinates both classes
    * `main()` - entry point
 
-## Your Tasks (TDD Approach):
+## Your Tasks:
 
-### Part 1: Design Your Scoring System
-1. **Decide** on your scoring system for each component:
+### Part 1: Understand the purpose of each class/function.
+Read through the files in the src directory and understand how they are expected to work together.
+
+Do not think about how to implement these functions/classes yet, but think about how the different classes interact with each other.
+
+
+### Part 2: Design Your Scoring System
+
+Based on their inputs to the questions asked, students receive a score that is used in the system to provide housing. Higher scores means their housing needs are more prioritized. Your tasks are to 
+
+1. **Decide** on your priority-based scoring system for each component:
    - How many points for each class year (1-4)?
    - How many points for graduating vs. not graduating?
    - How many points per credit hour?
    - What additional questions will you ask and how many points each?
-2. **Document** your scoring system in `SUMMARY.md` - you'll need this for writing tests!
 
-### Part 2: Write Tests FIRST 
+   You are free to choose your own scoring system, but you will need to explain why you made those choices. 
+
+2. **Document** your scoring system in `SUMMARY.md` - you'll need this for writing tests that conform to this exact specification!
+
+### Part 3: Complete the tests files in the tests/ directory
+ 
 **Before implementing any methods**, complete all the TODO items in the test files:
+
+Note: Before implementing the functions, you should write tests that specify how they are expected to behave. This is a good practice to follow in general, not just for this assignment, because it forces you to think about different inputs and edge cases independently from how *your* particular implementation might handle them. 
 
 #### 2a. Complete `test_question_asker.py`
 - **Write tests** for input validation and error handling
 - **Test** that methods return correct data types
 - **Test** invalid input followed by valid input scenarios
-- **Use `@patch('builtins.input')`** to mock user input
+- **Use `patch('builtins.input')`** to mock user input
 
 #### 2b. Complete `test_priority_calculator.py`
-- **Write specific test cases** based on your scoring system
+- **Write specific test cases** based on the scoring system you previously documented
 - **Fill in expected values** for each test method
 - **Test edge cases** (invalid years, negative credits, etc.)
 - **Run tests** - they should all fail initially (this is expected!)
@@ -90,7 +103,7 @@ Now implement the actual methods in the order that makes sense:
 * **Return** a dictionary where each key corresponds to a question and the value is a boolean
 
 ### Part 5: Final Testing and Integration
-* **Run all tests** to ensure everything works together:
+* **Run all tests** to ensure everything passes:
   ```
   python3 test_runner.py
   ```
@@ -100,11 +113,23 @@ Now implement the actual methods in the order that makes sense:
   python3 hw1.py
   ```
 
-  You may run your program directly to manually test that it works in addition to unittesting.
+  You may run your program directly to manually test that it correctly reads user input in addition to unittesting.
 
 * **Verify** that your inputs produce the expected scores according to your test cases
 
+## Downloading required libraries
+Run the following command to install dependencies:
+
+```pip install -r requirements.txt```
+
+For our test_runner.py and generate_coverage_reports.sh files to run, you need to download the required python libraries that are specified in `requirements.txt` with the command above. You don't need to know about these libraries, they are **only** there for our scripts to run properly, but you may take a look at our files if you're interested in seeing how they work. 
+
+
 ## Running Tests
+To run your tests, you can use the test_runner.py file we have provided. Run `python3 test_runner.py` to run all tests in the tests/ directory. 
+
+If you try to run the test files directly, you will face an import error. DO NOT try to fix this import error, and leave the imports as they are provided in the handout. Othwerwise, the autograder may not be able to run your tests properly, since it uses test_runner.py, and expects tests to execute properly that way. 
+
 While you are completing the test files, you may want to run individual test files at a time, instead of running them all at once. To do this, you can run test_runner.py with the -t option in your terminal to only run tests in the files you specify. Note: the test file names you provide must exist in the tests/ directory, or they won't run. 
 
   Example command to only run tests in test_hw1.py:
@@ -115,6 +140,16 @@ While you are completing the test files, you may want to run individual test fil
   ```python3 test_runner.py -t test_hw1.py test_priority_calculator.py```
 
   If you just want to run all tests in the tests/ directory, you can run `python3 test_runner.py` omitting the `-t` flag at the end. This will run all test files with the pattern `test_*.py` inside of the tests/ directory. Make sure all your test file names start with `test_`, or else they will not run.
+
+## Generating Coverage reports
+
+Run the following command in your terminal to generate coverage reports:
+
+```./generate_coverage_reports```
+
+A link to the a html page containing the coverage reports will be produced in the output of the command. You can click on it to view detailed coverage reports. 
+
+These reports indicate how much of your src code is being executed by your tests. You should aim to have full coverage (ie. every line of your code gets executed by your tests)
 
 ## Submission Instructions
 1. **Push** all files to your repository:
