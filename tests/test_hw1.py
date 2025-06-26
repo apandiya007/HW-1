@@ -4,7 +4,7 @@ Tests the main calculate_score function that coordinates both classes.
 """
 
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from typing import Dict
 
 from src.question_asker import HousingQuestionAsker
@@ -14,33 +14,20 @@ from src.priority_calculator import HousingPriorityCalculator
 class TestHousingPriorityIntegration(unittest.TestCase):
     """Integration tests for the Housing Priority Calculator.
 
-     Instructions on using unittest.mock.patch:
-     
-     - Each @patch decorator replaces the target function with a mock value.
-     - Supply return_value to specify what the mock should return.
-     - The decorated test method must accept an argument per patch, in reverse order.
-     - Since we're now using classes in separate files, we patch the class methods.
-     
-      e.g.:
-      
-        @patch.object(HousingQuestionAsker, 'ask_class_year', return_value=4) 
-        @patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=16)
-        def test_example(self, mock_credits, mock_year):  
-        
-        ----> Here mock_credits corresponds to ask_credits_earned
-        ----> mock_year corresponds to ask_class_year
+    Instructions on using unittest.mock.patch:
+    
+    - Each patch context manager replaces the target function with a mock value.
+    - Supply return_value to specify what the mock should return.
+    - Since we're now using classes in separate files, we patch the class methods.
+    
+    e.g.:
+    
+        with patch.object(HousingQuestionAsker, 'ask_class_year', return_value=4):
+            with patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=16):
+                # test code here
     """
 
-    @patch.object(HousingQuestionAsker, 'ask_class_year', return_value=4)
-    @patch.object(HousingQuestionAsker, 'ask_graduation_status', return_value=True)
-    @patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=16)
-    @patch.object(HousingQuestionAsker, 'ask_additional_questions',
-                  return_value={'old23': False, 'honors': True})
-    def test_calculate_score_senior_graduating(self, 
-                                               mock_additional: MagicMock,
-                                               mock_credits: MagicMock,
-                                               mock_grad: MagicMock,
-                                               mock_year: MagicMock) -> None:
+    def test_calculate_score_senior_graduating(self) -> None:
         """TODO: Test calculate_score for a graduating senior."""
         # Based on mocks:
         #   year=4 → X pts, grad=True → Y pts, credits=16 → Z pts,
@@ -50,18 +37,17 @@ class TestHousingPriorityIntegration(unittest.TestCase):
         # This is just an example - you'll need to update based on your scoring system:
         expected = 9  # TODO: Update this based on your actual point system
 
-        # TODO: Uncomment and complete this test
-        # result = calculate_score()
-        # self.assertEqual(result, expected)
-        pass
+        with patch.object(HousingQuestionAsker, 'ask_class_year', return_value=4):
+            with patch.object(HousingQuestionAsker, 'ask_graduation_status', return_value=True):
+                with patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=16):
+                    with patch.object(HousingQuestionAsker, 'ask_additional_questions',
+                                      return_value={'old23': False, 'honors': True}):
+                        # TODO: Uncomment and complete this test
+                        # result = calculate_score()
+                        # self.assertEqual(result, expected)
+                        pass
 
-    @patch.object(HousingQuestionAsker, 'ask_class_year', return_value=1) 
-    @patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=8)
-    @patch.object(HousingQuestionAsker,
-                  'ask_additional_questions',
-                  return_value={'old23': False, 'honors': False})
-    def test_calculate_score_freshman(self, mock_additional: MagicMock,
-                                      mock_credits: MagicMock, mock_year: MagicMock) -> None:
+    def test_calculate_score_freshman(self) -> None:
         """TODO: Test calculate_score for a freshman (no graduation question should be asked)."""
         # Note: ask_graduation_status should NOT be called for freshman
         # Based on mocks:
@@ -70,39 +56,41 @@ class TestHousingPriorityIntegration(unittest.TestCase):
 
         expected = 5  # TODO: Update this based on your actual point system
 
-        # TODO: Uncomment and complete this test
-        # result = calculate_score()
-        # self.assertEqual(result, expected)
-        pass
+        with patch.object(HousingQuestionAsker, 'ask_class_year', return_value=1):
+            with patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=8):
+                with patch.object(HousingQuestionAsker, 'ask_additional_questions',
+                                  return_value={'old23': False, 'honors': False}):
+                    # TODO: Uncomment and complete this test
+                    # result = calculate_score()
+                    # self.assertEqual(result, expected)
+                    pass
 
-    @patch.object(HousingQuestionAsker, 'ask_class_year', return_value=4)
-    @patch.object(HousingQuestionAsker, 'ask_graduation_status', return_value=False)
-    @patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=20)
-    @patch.object(HousingQuestionAsker, 'ask_additional_questions',
-                  return_value={'old23': True, 'honors': False})
-    def test_calculate_score_senior_not_graduating(self, mock_additional: MagicMock,
-                                                   mock_credits: MagicMock,
-                                                   mock_grad: MagicMock,
-                                                   mock_year: MagicMock) -> None:
+    def test_calculate_score_senior_not_graduating(self) -> None:
         """TODO: Test calculate_score for a non-graduating senior."""
         expected = 7  # TODO: Update this based on your actual point system
 
-        # TODO: Uncomment and complete this test
-        # result = calculate_score()
-        # self.assertEqual(result, expected)
-        pass
+        with patch.object(HousingQuestionAsker, 'ask_class_year', return_value=4):
+            with patch.object(HousingQuestionAsker, 'ask_graduation_status', return_value=False):
+                with patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=20):
+                    with patch.object(HousingQuestionAsker, 'ask_additional_questions',
+                                      return_value={'old23': True, 'honors': False}):
+                        # TODO: Uncomment and complete this test
+                        # result = calculate_score()
+                        # self.assertEqual(result, expected)
+                        pass
 
-    @patch.object(HousingQuestionAsker, 'ask_class_year', return_value=3)
-    @patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=12)
-    @patch.object(HousingQuestionAsker, 'ask_additional_questions', return_value={'old23': True, 'honors': True})
-    def test_calculate_score_junior(self, mock_additional: MagicMock, mock_credits: MagicMock, mock_year: MagicMock) -> None:
+    def test_calculate_score_junior(self) -> None:
         """TODO: Test calculate_score for a junior (no graduation question should be asked)."""
         expected = 8  # TODO: Update this based on your actual point system
         
-        # TODO: Uncomment and complete this test
-        # result = calculate_score()
-        # self.assertEqual(result, expected)
-        pass
+        with patch.object(HousingQuestionAsker, 'ask_class_year', return_value=3):
+            with patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=12):
+                with patch.object(HousingQuestionAsker, 'ask_additional_questions',
+                                  return_value={'old23': True, 'honors': True}):
+                    # TODO: Uncomment and complete this test
+                    # result = calculate_score()
+                    # self.assertEqual(result, expected)
+                    pass
 
     def test_graduation_question_only_for_seniors(self) -> None:
         """TODO: Test that graduation status is only asked for seniors."""

@@ -1,4 +1,3 @@
-# test_priority_calculator.py
 #!/usr/bin/env python3
 """
 Unit tests for the HousingPriorityCalculator class.
@@ -67,6 +66,7 @@ class TestHousingPriorityCalculator(unittest.TestCase):
 
     def test_points_for_credits_low(self) -> None:
         """TODO: Test points_for_credits with low credit count (e.g., 7)."""
+        pass
 
     def test_points_for_credits_medium(self) -> None:
         """TODO: Test points_for_credits with medium credit count (e.g., 15)."""
