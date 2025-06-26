@@ -5,8 +5,7 @@ Unit tests for the HousingPriorityCalculator class.
 """
 
 import unittest
-from typing import Dict
-from priority_calculator import HousingPriorityCalculator
+from src.priority_calculator import HousingPriorityCalculator
 
 
 class TestHousingPriorityCalculator(unittest.TestCase):
@@ -21,7 +20,7 @@ class TestHousingPriorityCalculator(unittest.TestCase):
         # TODO: Based on YOUR scoring system, what should freshman get?
         # If your system gives freshman 10 points, then:
         # expected_points = 10
-        
+
         # WRITE YOUR TEST HERE FIRST, THEN IMPLEMENT THE METHOD
         pass
 

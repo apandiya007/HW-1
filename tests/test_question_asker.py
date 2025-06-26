@@ -8,8 +8,7 @@ This follows Test-Driven Development (TDD) - write tests first, then make them p
 
 import unittest
 from unittest.mock import patch, MagicMock
-from typing import Any
-from question_asker import HousingQuestionAsker
+from src.question_asker import HousingQuestionAsker
 
 
 class TestHousingQuestionAsker(unittest.TestCase):
@@ -19,13 +18,17 @@ class TestHousingQuestionAsker(unittest.TestCase):
         """Set up test fixtures before each test method."""
         self.question_asker = HousingQuestionAsker()
 
-    @patch('builtins.input', return_value='3')
-    def test_ask_class_year_valid_input(self, mock_input: MagicMock) -> None:
+    def test_ask_class_year_valid_input(self) -> None:
         """Test ask_class_year with valid input."""
-        # TODO: Call self.question_asker.ask_class_year() and verify it returns the correct integer
-        # Expected: should return 3 (the mocked input)
-        # TODO: Remove 'pass' and implement the test
-        pass
+
+        with patch('builtins.input', return_value='3'):
+            # TODO: Remove 'pass' and implement the test
+            # You should do this by calling self.question_asker.ask_class_year()
+            # and verify it returns the correct integer
+
+            # Expected: should return 3 (the mocked input)
+            pass
+
 
     @patch('builtins.input', return_value='1')
     def test_ask_class_year_freshman(self, mock_input: MagicMock) -> None:

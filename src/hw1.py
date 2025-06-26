@@ -23,6 +23,7 @@ def calculate_score() -> int:
     pass
 
 
+<<<<<<< HEAD:root/hw1.py
 def main() -> None:
     """Entry point: print header, compute score, print footer. (For easier readability)"""
     # TODO: implement
@@ -31,3 +32,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+=======
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
+>>>>>>> fc79f4d47e2b550ce13f9ef4195812e6dea7309c:src/hw1.py
