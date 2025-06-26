@@ -7,9 +7,8 @@ This is the main module that orchestrates the housing priority calculation
 by using both the HousingQuestionAsker and HousingPriorityCalculator classes.
 """
 
-from question_asker import HousingQuestionAsker
-from priority_calculator import HousingPriorityCalculator
-
+from src.question_asker import HousingQuestionAsker
+from src.priority_calculator import HousingPriorityCalculator
 
 def calculate_score() -> int:
     """TODO: Orchestrate all steps using both classes:
