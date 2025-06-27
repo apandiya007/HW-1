@@ -12,20 +12,20 @@ class TestHousingPriorityIntegration(unittest.TestCase):
     """Integration tests for the Housing Priority Calculator.
 
     Instructions on using unittest.mock.patch:
-    
+
     - Each patch context manager replaces the target function with a mock value.
     - Supply return_value to specify what the mock should return.
     - Since we're now using classes in separate files, we patch the class methods.
-    
+
     e.g.:
-    
+
         with patch.object(HousingQuestionAsker, 'ask_class_year', return_value=4):
             with patch.object(HousingQuestionAsker, 'ask_credits_earned', return_value=16):
                 # test code here
     """
 
     def test_calculate_score_senior_graduating(self) -> None:
-        """TODO: Test calculate_score for a graduating senior."""
+        """Test calculate_score for a graduating senior."""
         # Based on mocks:
         #   year=4 → X pts, grad=True → Y pts, credits=16 → Z pts,
         #   additional={'honors':True} → W pts
@@ -94,6 +94,6 @@ class TestHousingPriorityIntegration(unittest.TestCase):
             pass
 
     def test_graduation_question_only_for_seniors(self) -> None:
-        """TODO: Test that graduation status is only asked for seniors."""
+        """Test that graduation status is only asked for seniors."""
         # This test should verify that ask_graduation_status is only called when class year is 4
         # You might want to use patch to track method calls

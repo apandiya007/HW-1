@@ -17,6 +17,8 @@ class TestHousingPriorityCalculator(unittest.TestCase):
     def test_points_for_class_year_freshman(self) -> None:
         """Test points_for_class_year for freshman (year 1)."""
         # Based on YOUR scoring system, what should freshman get?
+        """Test points_for_class_year for freshman (year 1)."""
+        # Based on YOUR scoring system, what should freshman get?
         # If your system gives freshman 10 points, then:
         # expected_points = 10
 
@@ -118,7 +120,7 @@ class TestHousingPriorityCalculator(unittest.TestCase):
         pass
 
     def test_calculate_total_score_edge_cases(self) -> None:
-        """ Test calculate_total_score with edge cases."""
+        """Test calculate_total_score with edge cases."""
         # Test unusual combinations:
         # - Very high credits (e.g., 150)
         # - Invalid years (if your method handles them)
