@@ -1,14 +1,11 @@
-# hw1.py
-#!/usr/bin/env python3
 """
 HW 1: Housing Priority Calculator - Main Module
 
 This is the main module that orchestrates the housing priority calculation
 by using both the HousingQuestionAsker and HousingPriorityCalculator classes.
 """
-
 from src.question_asker import HousingQuestionAsker
-from src.priority_calculator import HousingPriorityCalculator
+from priority_calculator import HousingPriorityCalculator
 
 def calculate_score() -> int:
     """TODO: Orchestrate all steps using both classes:
@@ -17,13 +14,14 @@ def calculate_score() -> int:
       3) Use HousingPriorityCalculator to compute the final score
       4) Handle the logic for only asking graduation status if student is a senior
       Return total score.
+
+      TODO: implement the main calculation flow using both classes
     """
-    # TODO: implement the main calculation flow using both classes
     pass
 
 def main() -> None:
-    """Entry point: print header, compute score, print footer. (For easier readability)"""
-    # TODO: implement
+    """
+    Entry point: print header, compute score, print footer. (For easier readability)
+    """
+
     pass
-
-

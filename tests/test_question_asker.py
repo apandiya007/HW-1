@@ -106,7 +106,7 @@ class TestHousingQuestionAsker(unittest.TestCase):
         """Test ask_additional_questions with basic y/n responses."""
         with patch('builtins.input', side_effect=['y', 'n']):
             result = self.question_asker.ask_additional_questions()
-            # TODO: Update these keys based on your actual additional questions
+            # Update these keys based on your actual additional questions:
             # Expected result format: {'question1_key': True, 'question2_key': False}
             # Common examples: 'old23', 'honors', 'athlete', 'work_study', etc.
             # self.assertEqual(result, {'old23': True, 'honors': False})
@@ -116,7 +116,7 @@ class TestHousingQuestionAsker(unittest.TestCase):
         """Test ask_additional_questions with n/y responses."""
         with patch('builtins.input', side_effect=['n', 'y']):
             result = self.question_asker.ask_additional_questions()
-            # TODO: Test with opposite responses (n first, y second)
+            # Test with opposite responses (n first, y second):
             # self.assertEqual(result, {'old23': False, 'honors': True})
             pass
 
@@ -124,7 +124,7 @@ class TestHousingQuestionAsker(unittest.TestCase):
         """Test ask_additional_questions with uppercase responses."""
         with patch('builtins.input', side_effect=['Y', 'N']):
             result = self.question_asker.ask_additional_questions()
-            # TODO: Test that uppercase Y/N work correctly
+            # Test that uppercase Y/N work correctly:
             # self.assertEqual(result, {'old23': True, 'honors': False})
             pass
 
@@ -132,18 +132,14 @@ class TestHousingQuestionAsker(unittest.TestCase):
         """Test ask_additional_questions with some invalid inputs."""
         with patch('builtins.input', side_effect=['invalid', 'y', 'maybe', 'n']):
             result = self.question_asker.ask_additional_questions()
-            # TODO: Test that the method handles invalid input gracefully for both questions
+            # Test that the method handles invalid input gracefully for both questions:
             # Expected: should return proper dict after rejecting 'invalid' and 'maybe'
             # self.assertEqual(result, {'old23': True, 'honors': False})
             pass
 
     def test_return_types(self) -> None:
         """Test that all methods return the correct data types."""
-        # TODO: This test should verify return types without mocking input
+        # This test should verify return types without mocking input:
         # You might want to use patch or handle this differently
         # This is a structural test to ensure type hints are respected
         pass
-
-
-if __name__ == '__main__':
-    unittest.main(verbosity=2)

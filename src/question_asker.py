@@ -1,10 +1,11 @@
-#!/usr/bin/env python3
 """
 HW 1: Housing Priority Calculator - Question Asker Module
 
 This module contains the HousingQuestionAsker class responsible for gathering user input.
 
-IMPORTANT: Do NOT implement these methods until you have completed ALL tests in test_question_asker.py!
+IMPORTANT: Do NOT implement these methods until you have completed ALL tests in 
+test_question_asker.py!
+
 This follows Test-Driven Development (TDD) principles.
 
 Step 1: Complete all TODO items in test_question_asker.py
@@ -13,11 +14,9 @@ Step 3: Implement methods below to make tests pass
 Step 4: Run tests again to verify they pass
 """
 
-from typing import Dict
-
 class HousingQuestionAsker:
     """Class responsible for asking questions and gathering user input."""
-    
+
     def ask_class_year(self) -> int:
         """Ask the student for their class year and return it as int.
         
@@ -81,7 +80,7 @@ class HousingQuestionAsker:
         # 5. Return the valid integer
         pass
 
-    def ask_additional_questions(self) -> Dict[str, bool]:
+    def ask_additional_questions(self) -> dict[str, bool]:
         """Ask at least two yes/no questions and return a dict of responses.
         
         Requirements based on tests:
