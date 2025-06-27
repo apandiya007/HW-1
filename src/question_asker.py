@@ -7,7 +7,7 @@ This module contains the HousingQuestionAsker class responsible for gathering us
 IMPORTANT: Do NOT implement these methods until you have completed ALL tests in test_question_asker.py!
 This follows Test-Driven Development (TDD) principles.
 
-Step 1: Complete all TODO items in test_question_asker.py
+Step 1: Complete all required items in test_question_asker.py
 Step 2: Run tests (they should fail) - this is expected!
 Step 3: Implement methods below to make tests pass
 Step 4: Run tests again to verify they pass
@@ -28,14 +28,15 @@ class HousingQuestionAsker:
         - Return the class year as an integer
         
         DO NOT IMPLEMENT until tests are written!
+        
+        Implement after writing tests
+        Your implementation should:
+        1. Display a clear prompt
+        2. Get user input
+        3. Validate input (must be 1, 2, 3, or 4)
+        4. Handle invalid input by asking again
+        5. Return the valid integer
         """
-        # TODO: Implement after writing tests
-        # Your implementation should:
-        # 1. Display a clear prompt
-        # 2. Get user input
-        # 3. Validate input (must be 1, 2, 3, or 4)
-        # 4. Handle invalid input by asking again
-        # 5. Return the valid integer
         pass
 
     def ask_graduation_status(self) -> bool:
@@ -51,14 +52,15 @@ class HousingQuestionAsker:
         The logic for when to call this is handled in hw1.py
         
         DO NOT IMPLEMENT until tests are written!
+        
+        Implement after writing tests
+        Your implementation should:
+        1. Display a clear prompt
+        2. Get user input
+        3. Validate input (must be y/Y/n/N)
+        4. Handle invalid input by asking again
+        5. Return True for y/Y, False for n/N
         """
-        # TODO: Implement after writing tests
-        # Your implementation should:
-        # 1. Display a clear prompt
-        # 2. Get user input
-        # 3. Validate input (must be y/Y/n/N)
-        # 4. Handle invalid input by asking again
-        # 5. Return True for y/Y, False for n/N
         pass
 
     def ask_credits_earned(self) -> int:
@@ -71,14 +73,15 @@ class HousingQuestionAsker:
         - Return the valid integer
         
         DO NOT IMPLEMENT until tests are written!
+        
+        Implement after writing tests
+        Your implementation should:
+        1. Display a clear prompt
+        2. Get user input
+        3. Validate input (must be non-negative integer)
+        4. Handle invalid input by asking again
+        5. Return the valid integer
         """
-        # TODO: Implement after writing tests
-        # Your implementation should:
-        # 1. Display a clear prompt
-        # 2. Get user input
-        # 3. Validate input (must be non-negative integer)
-        # 4. Handle invalid input by asking again
-        # 5. Return the valid integer
         pass
 
     def ask_additional_questions(self) -> Dict[str, bool]:
@@ -99,19 +102,20 @@ class HousingQuestionAsker:
         Choose your own questions, but make sure your test keys match!
         
         DO NOT IMPLEMENT until tests are written!
+        
+        Implement after writing tests
+        Your implementation should:
+        1. Ask your first question with clear prompt
+        2. Validate input (y/Y/n/N)
+        3. Ask your second question with clear prompt
+        4. Validate input (y/Y/n/N)
+        5. Handle invalid input for both questions
+        6. Return dict with 2 keys and boolean values
+        
+        Example structure:
+        return {
+            'your_first_key': boolean_result_1,
+            'your_second_key': boolean_result_2 
+            }
         """
-        # TODO: Implement after writing tests
-        # Your implementation should:
-        # 1. Ask your first question with clear prompt
-        # 2. Validate input (y/Y/n/N)
-        # 3. Ask your second question with clear prompt
-        # 4. Validate input (y/Y/n/N)
-        # 5. Handle invalid input for both questions
-        # 6. Return dict with 2 keys and boolean values
-        #
-        # Example structure:
-        # return {
-        #     'your_first_key': boolean_result_1,
-        #     'your_second_key': boolean_result_2
-        # }
         pass

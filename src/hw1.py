@@ -11,19 +11,19 @@ from src.question_asker import HousingQuestionAsker
 from src.priority_calculator import HousingPriorityCalculator
 
 def calculate_score() -> int:
-    """TODO: Orchestrate all steps using both classes:
+    """Orchestrate all steps using both classes:
       1) Create instances of HousingQuestionAsker and HousingPriorityCalculator
       2) Use HousingQuestionAsker to gather all information
       3) Use HousingPriorityCalculator to compute the final score
       4) Handle the logic for only asking graduation status if student is a senior
       Return total score.
+      5) Implement the main calculation flow using both classes
     """
-    # TODO: implement the main calculation flow using both classes
+    
     pass
 
 def main() -> None:
     """Entry point: print header, compute score, print footer. (For easier readability)"""
-    # TODO: implement
     pass
 
 
