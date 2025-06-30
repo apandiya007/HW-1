@@ -46,7 +46,7 @@ class HousingPriorityCalculator:
         """
         pass
 
-    def points_for_credits(self, credits: int) -> int:
+    def points_for_credits(self, num_credits: int) -> int:
         """
         Compute points based on credits earned.
 
@@ -66,7 +66,7 @@ class HousingPriorityCalculator:
         """
         pass
 
-    def points_for_additional_questions(self, responses: Dict[str, bool]) -> int:
+    def points_for_additional_questions(self, responses: dict[str, bool]) -> int:
         """
         Given the dict from ask_additional_questions(), assign points.
 
@@ -89,8 +89,8 @@ class HousingPriorityCalculator:
         self,
         year: int,
         is_graduating: bool,
-        credits: int,
-        additional_responses: Dict[str, bool],
+        num_credits: int,
+        additional_responses: dict[str, bool],
     ) -> int:
         """
         Calculate the total priority score based on all inputs.

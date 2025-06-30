@@ -16,7 +16,6 @@ def calculate_score() -> int:
       Return total score.
       5) Implement the main calculation flow using both classes
     """
-    
     pass
 
 def main() -> None:
