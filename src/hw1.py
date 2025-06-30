@@ -5,7 +5,7 @@ This is the main module that orchestrates the housing priority calculation
 by using both the HousingQuestionAsker and HousingPriorityCalculator classes.
 """
 from src.question_asker import HousingQuestionAsker
-from priority_calculator import HousingPriorityCalculator
+from src.priority_calculator import HousingPriorityCalculator
 
 def calculate_score() -> int:
     """Orchestrate all steps using both classes:
@@ -21,3 +21,6 @@ def calculate_score() -> int:
 def main() -> None:
     """Entry point: print header, compute score, print footer. (For easier readability)"""
     pass
+
+if __name__ == "__main__":
+    main()

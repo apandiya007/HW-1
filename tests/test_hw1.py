@@ -6,8 +6,7 @@ Tests the main calculate_score function that coordinates both classes.
 import unittest
 from unittest.mock import patch
 from src.question_asker import HousingQuestionAsker
-from src.priority_calculator import HousingPriorityCalculator
-
+from src.hw1 import calculate_score
 class TestHousingPriorityIntegration(unittest.TestCase):
     """Integration tests for the Housing Priority Calculator.
 
@@ -46,7 +45,7 @@ class TestHousingPriorityIntegration(unittest.TestCase):
             pass
 
     def test_calculate_score_freshman(self) -> None:
-        """TODO: Test calculate_score for a freshman (no graduation question should be asked)."""
+        """Test calculate_score for a freshman (no graduation question should be asked)."""
         # Note: ask_graduation_status should NOT be called for freshman
         # Based on mocks:
         #   year=1 → X pts, grad=N/A → 0 pts, credits=8 → Y pts, additional=all False → Z pts
@@ -65,7 +64,7 @@ class TestHousingPriorityIntegration(unittest.TestCase):
             pass
 
     def test_calculate_score_senior_not_graduating(self) -> None:
-        """TODO: Test calculate_score for a non-graduating senior."""
+        """Test calculate_score for a non-graduating senior."""
         # Uncomment and update this based on your actual point system:
         # expected = 7
 
@@ -80,7 +79,7 @@ class TestHousingPriorityIntegration(unittest.TestCase):
             pass
 
     def test_calculate_score_junior(self) -> None:
-        """TODO: Test calculate_score for a junior (no graduation question should be asked)."""
+        """Test calculate_score for a junior (no graduation question should be asked)."""
         # Uncomment and update this based on your actual point system:
         # expected = 8
 
@@ -92,8 +91,3 @@ class TestHousingPriorityIntegration(unittest.TestCase):
             # result = calculate_score()
             # self.assertEqual(result, expected)
             pass
-
-    def test_graduation_question_only_for_seniors(self) -> None:
-        """Test that graduation status is only asked for seniors."""
-        # This test should verify that ask_graduation_status is only called when class year is 4
-        # You might want to use patch to track method calls

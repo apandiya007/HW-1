@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Unit tests for the HousingPriorityCalculator class.
 """
@@ -41,12 +40,6 @@ class TestHousingPriorityCalculator(unittest.TestCase):
         # WRITE YOUR TEST HERE FIRST, THEN IMPLEMENT THE METHOD
         pass
 
-    def test_points_for_class_year_invalid(self) -> None:
-        """Test points_for_class_year with invalid year."""
-        # What should happen with year 0 or year 5?
-        # Should you return 0 points or raise an exception?
-        pass
-
     def test_points_for_graduation_true(self) -> None:
         """Test points_for_graduation when graduating."""
         # How many points should graduating students get?
@@ -59,7 +52,7 @@ class TestHousingPriorityCalculator(unittest.TestCase):
 
     def test_points_for_credits_zero(self) -> None:
         """Test points_for_credits with 0 credits."""
-        # What should 0 credits give? Usually 0 points.
+        # What should 0 credits give?
         # result = self.priority_calculator.points_for_credits(0)
         # self.assertEqual(result, 0)
         pass
@@ -100,28 +93,32 @@ class TestHousingPriorityCalculator(unittest.TestCase):
     def test_calculate_total_score_freshman_scenario(self) -> None:
         """Test calculate_total_score for a freshman scenario."""
         # Calculate expected total based on YOUR scoring system
-        # Example scenario: year=1, is_graduating=False, credits=8, additional_responses={'old23': False, 'honors': True}
+        # Example scenario: year=1, is_graduating=False, credits=8,
+        #  additional_responses={'old23': False, 'honors': True}
         # If your system: freshman=10pts, not_graduating=0pts, credits=8pts, honors_only=3pts
         # expected_total = 10 + 0 + 8 + 3 = 21
         pass
 
     def test_calculate_total_score_senior_graduating_scenario(self) -> None:
         """Test calculate_total_score for a graduating senior scenario."""
-        # Calculate expected total for: year=4, is_graduating=True, credits=16, additional_responses={'old23': True, 'honors': True}
+        # Calculate expected total for: year=4, is_graduating=True, credits=16,
+        #  additional_responses={'old23': True, 'honors': True}
         # Work out the math based on YOUR scoring system first!
         pass
 
     def test_calculate_total_score_senior_non_graduating_scenario(self) -> None:
         """Test calculate_total_score for a non-graduating senior scenario."""
-        # Calculate expected total for: year=4, is_graduating=False, credits=20, additional_responses={'old23': False, 'honors': False}
+        # Calculate expected total for: year=4, is_graduating=False, credits=20,
+        #  additional_responses={'old23': False, 'honors': False}
         # Work out the math based on YOUR scoring system first!
         pass
 
     def test_calculate_total_score_edge_cases(self) -> None:
         """Test calculate_total_score with edge cases."""
-        # Test unusual combinations:
-        # - Very high credits (e.g., 150)
-        # - Invalid years (if your method handles them)
-        # - Empty additional_responses dict
-        # - Negative credits (should this be allowed?)
+        # Test edge cases as needed based on your priority scoring system.
+
+        # Note: you don't need to test for negative credits or invalid years,
+        # since your question asker should be disallowing negative inputs anyway.
+
+
         pass

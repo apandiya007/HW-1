@@ -11,7 +11,7 @@
 Welcome to your first programming assignment of the semester! In this assignment you will be building a housing "priority score" engine in Python that decides who gets the first pick of campus housing. You'll dive into human-centered design—chatting with users, uncovering their needs, and iterating on your plan—while mastering Python basics: grabbing input, crafting if/elif/else logic, performing arithmetic, and tallying up points.
 
 ## NOTE
-Although this assignment primarily focuses on TDD, it should be general practice whenever you write some code! 
+Although this assignment primarily focuses on TDD, it should be general practice to write tests first whenever you write some code! 
 
 
 This assignment introduces you to **object-oriented programming** by separating functionality into distinct classes:
@@ -40,6 +40,9 @@ This assignment introduces you to **object-oriented programming** by separating 
 Read through the files in the src directory and understand how they are expected to work together.
 
 Do not think about how to implement these functions/classes yet, but think about how the different classes interact with each other.
+
+
+Note: In the handout files, if you have pylint setup correctly, vscode may show you some errors/informational comments about unused imports or unused variables or unnecessary pass statements. You may ignore these for now as they will go away once you start completing the hw. Do not get rid of the imports or any starter code assuming it is unused, you will need it later! 
 
 
 ### Part 2: Design Your Scoring System
@@ -93,14 +96,13 @@ Now implement the actual methods in the order that makes sense:
 - **Run tests frequently**: `python3 -m pytest test_priority_calculator.py -v`
 - **Make sure each test passes** before moving to the next method
 
-
 #### 3c. Implement `hw1.py`
 - **Implement the coordination logic** between both classes
 - **Run integration tests**: `python3 -m pytest test_hw1.py -v`
 - **Make sure graduation questions are only asked for seniors**
 
 ### Part 4: Extending Additional Questions
-* **Add at least two new yes/no prompts** (e.g., older than 23?, honors student?)
+* **Add exactly two new yes/no prompts** (e.g., older than 23?, honors student?)
 * **Update your tests first** to include these new questions
 * **Then implement** the functionality to make tests pass
 * **Return** a dictionary where each key corresponds to a question and the value is a boolean
@@ -152,7 +154,7 @@ Run the following command in your terminal to generate coverage reports:
 
 A link to the a html page containing the coverage reports will be produced in the output of the command. You can click on it to view detailed coverage reports. 
 
-These reports indicate how much of your src code is being executed by your tests. You should aim to have full coverage (ie. every line of your code gets executed by your tests)
+These reports indicate how much of your code is being executed by your tests. This is a purely syntactic check, and having full coverage does not necessarily mean your tests are sufficient, but it's a good starting point. You should aim to have full coverage (ie. every line of your code gets executed by your tests)
 
 ## Submission Instructions
 1. **Push** all files to your repository:
