@@ -65,49 +65,55 @@ Based on their inputs to the questions asked, students receive a score that is u
 
 Note: Before implementing the functions, you should write tests that specify how they are expected to behave. This is a good practice to follow in general, not just for this assignment, because it forces you to think about different inputs and edge cases independently from how *your* particular implementation might handle them. 
 
-#### 2a. Complete `test_question_asker.py`
+#### 3a. Complete `test_question_asker.py`
 - **Write tests** for input validation and error handling
 - **Test** that methods return correct data types
 - **Test** invalid input followed by valid input scenarios
 - **Use `patch('builtins.input')`** to mock user input
 
-#### 2b. Complete `test_priority_calculator.py`
+#### 3b. Complete `test_priority_calculator.py`
 - **Write specific test cases** based on the scoring system you previously documented
 - **Fill in expected values** for each test method
 - **Test edge cases** (invalid years, negative credits, etc.)
 - **Run tests** - they should all fail initially (this is expected!)
 
-#### 2c. Complete `test_hw1.py`
+#### 3c. Complete `test_hw1.py`
 - **Write integration tests** for the main coordination function
 - **Use `@patch.object()`** to simulate all inputs and verify totals
 - **Test** that graduation questions are only asked for seniors
 - **Test** different scenarios (freshman, senior graduating, etc.)
 
-### Part 3: Implement Methods to Make Tests Pass
+#### 3d. Commit test files
+
+- **IMPORTANT: Make sure you commit what you have to your github repository after writing all the tests, and before starting to implement any of the classes/functions**
+
+- We will be using this commit to check that you have written tests before implementation, so please make sure to commit your tests before the implementation.
+
+### Part 4: Implement Methods to Make Tests Pass
 Now implement the actual methods in the order that makes sense:
 
-#### 3a. Implement `question_asker.py`
+#### 4a. Implement `question_asker.py`
 - **Implement input validation** and error handling
 - **Run tests**: `python3 -m pytest test_question_asker.py -v`
 - **Handle edge cases** like invalid input followed by valid input
 
-#### 3b. Implement `priority_calculator.py`
+#### 4b. Implement `priority_calculator.py`
 - **Implement each method** according to your scoring system
 - **Run tests frequently**: `python3 -m pytest test_priority_calculator.py -v`
 - **Make sure each test passes** before moving to the next method
 
-#### 3c. Implement `hw1.py`
+#### 4c. Implement `hw1.py`
 - **Implement the coordination logic** between both classes
 - **Run integration tests**: `python3 -m pytest test_hw1.py -v`
 - **Make sure graduation questions are only asked for seniors**
 
-### Part 4: Extending Additional Questions
+### Part 5: Extending Additional Questions
 * **Add exactly two new yes/no prompts** (e.g., older than 23?, honors student?)
 * **Update your tests first** to include these new questions
 * **Then implement** the functionality to make tests pass
 * **Return** a dictionary where each key corresponds to a question and the value is a boolean
 
-### Part 5: Final Testing and Integration
+### Part 6: Final Testing and Integration
 * **Run all tests** to ensure everything passes:
   ```
   python3 test_runner.py
@@ -170,7 +176,7 @@ These reports indicate how much of your code is being executed by your tests. Th
 
 ## Grading Rubric
 - **Test Quality**: Comprehensive, well-designed tests that cover edge cases (30%)
-- **TDD Process**: Evidence of writing tests before implementation (20%)
+- **TDD Process**: Evidence of writing tests before implementation (20%) (A commit that includes all tests before implementation)
 - **Implementation**: All methods work correctly and make tests pass (25%)
 - **Object-Oriented Design**: Proper separation of concerns between classes (15%)
 - **Documentation**: Complete SUMMARY.md with clear scoring rationale (10%)
