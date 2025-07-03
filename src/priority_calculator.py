@@ -14,6 +14,9 @@ class HousingPriorityCalculator:
         """
         Given an integer `year`, return points based on your scoring system.
 
+        Here, you may assume year is an integer from 1 to 4, since we already 
+        validated input in the question asker. 
+
         IMPORTANT: Write your tests in test_priority_calculator.py FIRST!
         Then implement this method to make those tests pass.
 
@@ -57,6 +60,9 @@ class HousingPriorityCalculator:
         - 0.5 points per credit
         - Tiered system: 0-30 credits = 1pt each, 31+ = 2pts each
         - Maximum cap: up to 50 credits count
+
+        Here, you may assume num_credits is a non-negative integer,
+        since we already validated input in the question asker.
 
         Document your system in SUMMARY.md!
         
@@ -104,6 +110,9 @@ class HousingPriorityCalculator:
             + self.points_for_credits(num_credits)
             + self.points_for_additional_questions(additional_responses)
         )
+
+        Here, you may assume that the responses dict contains valid keys
+        corresponding to the questions you designed in ask_additional_questions().
         
         Args:
             year (int): Class year (1-4)
