@@ -1,7 +1,7 @@
 # HW 1: Housing Priority Calculator
 
 ## Learning Outcomes
-- Practice Test-Driven Development (TDD) methodology
+- Practice writing tests
 - Practice designing functions in Python with type annotations, documentation, and tests
 - Developing classes in Python with proper separation of concerns
 - Understanding object-oriented design principles
@@ -11,7 +11,7 @@
 Welcome to your first programming assignment of the semester! In this assignment you will be building a housing "priority score" engine in Python that decides who gets the first pick of campus housing. You'll dive into human-centered design—chatting with users, uncovering their needs, and iterating on your plan—while mastering Python basics: grabbing input, crafting if/elif/else logic, performing arithmetic, and tallying up points.
 
 ## NOTE
-Although this assignment primarily focuses on TDD, it should be general practice to formalize and think about concrete examples first before you write some code! 
+Although this assignment primarily focuses on writing tests before implementation, it should be general practice to formalize and think about concrete examples first before you writing code.
 
 
 This assignment introduces you to **object-oriented programming** by separating functionality into distinct classes:
@@ -176,9 +176,8 @@ These reports indicate how much of your code is being executed by your tests. Th
 
 ## Grading Rubric
 - **Test Quality**: Comprehensive, well-designed tests that cover edge cases (30%)
-- **TDD Process**: Evidence of writing tests before implementation (20%) (A commit that includes all tests before implementation)
 - **Implementation**: All methods work correctly and make tests pass (25%)
-- **Object-Oriented Design**: Proper separation of concerns between classes (15%)
-- **Documentation**: Complete SUMMARY.md with clear scoring rationale (10%)
+- **Object-Oriented Design**: Proper separation of concerns between classes (20%)
+- **Documentation**: Complete SUMMARY.md with clear scoring rationale (25%)
 
 Feel free to ask questions on Piazza if anything is unclear. Good luck!
