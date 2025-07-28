@@ -6,6 +6,12 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Read Test files")
+    parser.add_argument("-i",
+                        "--impl", 
+                        required=False,
+                        action="store_true",
+                        help="Also run implementation tests (tests that start with `impl_`)")
+
     parser.add_argument("-t",
                         "--tests", 
                         nargs="+",
@@ -31,11 +37,20 @@ if __name__ == '__main__':
                 verbosity=2
             ).run(suite)
     else:
-        print("\n\nRunning all tests in the tests/ dir. \n" \
-        "Make sure your test file names start with `test_`, or they won't run\n")
-
-        suite = unittest.defaultTestLoader.discover(start_dir='tests', pattern='test_*.py')
+        print("\n\033[1mRunning interface tests: make sure these test file " \
+        "names start with `test_`, or they won't run\033[0m\n")
+        interface_suite = unittest.defaultTestLoader.discover(start_dir='tests',
+                                                              pattern='test_*.py')
 
         unittest.TextTestRunner(
             verbosity=2
-        ).run(suite)
+        ).run(interface_suite)
+
+        if args.impl:
+            print("\n\033[1mRunning implementation tests: make sure these test " \
+            "file names start with `impl_`, or they won't run\033[0m\n")
+            impl_suite = unittest.defaultTestLoader.discover(start_dir='tests', pattern='impl_*.py')
+
+            unittest.TextTestRunner(
+                verbosity=2
+            ).run(impl_suite)
