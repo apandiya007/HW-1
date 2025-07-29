@@ -2,7 +2,6 @@
 Unit tests for the HousingQuestionAsker class.
 
 IMPORTANT: Complete ALL test methods below BEFORE implementing any methods in question_asker.py
-This follows Test-Driven Development (TDD) - write tests first, then make them pass!
 """
 
 import unittest

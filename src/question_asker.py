@@ -6,8 +6,6 @@ This module contains the HousingQuestionAsker class responsible for gathering us
 IMPORTANT: Do NOT implement these methods until you have completed ALL tests in 
 test_question_asker.py!
 
-This follows Test-Driven Development (TDD) principles.
-
 Step 1: Complete all required items in test_question_asker.py
 Step 2: Run tests (they should fail) - this is expected!
 Step 3: Implement methods below to make tests pass

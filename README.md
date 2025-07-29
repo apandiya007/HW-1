@@ -42,7 +42,7 @@ Read through the files in the src directory and understand how they are expected
 Do not think about how to implement these functions/classes yet, but think about how the different classes interact with each other.
 
 
-Note: In the handout files, if you have pylint setup correctly, vscode may show you some errors/informational comments about unused imports or unused variables or unnecessary pass statements. You may ignore these for now as they will go away once you start completing the hw. Do not get rid of the imports or any starter code assuming it is unused, you will need it later! 
+Note: In the handout files, if you have pylint setup correctly, vscode will show you some errors/informational comments about unused imports or unused variables or unnecessary pass statements. You may ignore these for now as they will go away once you start completing the hw. Do not get rid of the imports or any starter code assuming it is unused, you will need it later! 
 
 
 ### Part 2: Design Your Scoring System
@@ -65,31 +65,45 @@ Based on their inputs to the questions asked, students receive a score that is u
 
 Note: Before implementing the functions, you should write tests that specify how they are expected to behave. This is a good practice to follow in general, not just for this assignment, because it forces you to think about different inputs and edge cases independently from how *your* particular implementation might handle them. 
 
+
+You will notice that some test file names begin with `impl_`. This is because the tests in these files are specific to how you choose to implement this assignment (other valid implementations may fail these tests, and that's okay). 
+
+The tests in file names starting with `test_`, on the other hand, are interface tests (ie. they should pass for any valid implementation). The tests in these files should not be specific to your implementation.
+
+For this assignment, you do not have to worry about segregating your tests into `test_` and `impl_` files, as we have already provided partially written tests in the appropriate files, but pay attention to why the tests have been split this way in the provided handout. 
+
+You must write all interface tests (`test_*.py`) before 
 #### 3a. Complete `test_question_asker.py`
 - **Write tests** for input validation and error handling
-- **Test** that methods return correct data types
 - **Test** invalid input followed by valid input scenarios
 - **Use `patch('builtins.input')`** to mock user input
 
-#### 3b. Complete `test_priority_calculator.py`
-- **Write specific test cases** based on the scoring system you previously documented
+#### 3b. Complete `impl_priority_calculator.py`
+- **Write specific test cases** based on your particular scoring system that you previously documented
 - **Fill in expected values** for each test method
 - **Test edge cases** (invalid years, negative credits, etc.)
-- **Run tests** - they should all fail initially (this is expected!)
 
-#### 3c. Complete `test_hw1.py`
+#### 3c. Complete `impl_additional_questions.py`
+- **Write specific test cases** based on the additional questions that you choose to ask.
+- **Fill in expected values** for each test method
+- **Test edge cases** (invalid years, uppercase/lowercase input, etc.) 
+
+
+#### 3d. Complete `impl_hw1.py`
 - **Write integration tests** for the main coordination function
 - **Use `@patch.object()`** to simulate all inputs and verify totals
 - **Test** that graduation questions are only asked for seniors
 - **Test** different scenarios (freshman, senior graduating, etc.)
 
-#### 3d. Commit test files
+#### 3e. Commit test files
 
 - **IMPORTANT: Make sure you commit what you have to your github repository after writing all the tests, and before starting to implement any of the classes/functions**
 
 - We will be using this commit to check that you have written tests before implementation, so please make sure to commit your tests before the implementation.
 
-### Part 4: Implement Methods to Make Tests Pass
+- You may try to run your tests now, with `python3 test_runner.py` (more info below on how to run tests). Your tests will fail; this is expected: we haven't gotten to implementing the functionality yet!
+
+### Part 4: Implement Methods according to your test specification
 Now implement the actual methods in the order that makes sense:
 
 #### 4a. Implement `question_asker.py`
@@ -109,7 +123,7 @@ Now implement the actual methods in the order that makes sense:
 
 ### Part 5: Extending Additional Questions
 * **Add exactly two new yes/no prompts** (e.g., older than 23?, honors student?)
-* **Update your tests first** to include these new questions
+* **Update your tests first** to include these new questions, if you haven't done so already
 * **Then implement** the functionality to make tests pass
 * **Return** a dictionary where each key corresponds to a question and the value is a boolean
 
@@ -120,7 +134,7 @@ Now implement the actual methods in the order that makes sense:
   ```
 
 * **Execute your program (manual testing)**:
-  ```bash
+  ```
   python3 hw1.py
   ```
 
@@ -139,18 +153,18 @@ For our test_runner.py and generate_coverage_reports.sh files to run, you need t
 ## Running Tests
 To run your tests, you can use the test_runner.py file we have provided. Run `python3 test_runner.py` to run all tests in the tests/ directory. 
 
-If you try to run the test files directly, you will face an import error. DO NOT try to fix this import error, and leave the imports as they are provided in the handout. Othwerwise, the autograder may not be able to run your tests properly, since it uses test_runner.py, and expects tests to execute properly that way. 
+If you try to run the test files directly, you will face an import error due to the way the assignment is structured. DO NOT try to fix this import error, and leave the imports as they are provided in the handout. Othwerwise, the autograder may not be able to run your tests properly, since it uses test_runner.py, and expects tests to execute properly that way. 
 
 While you are completing the test files, you may want to run individual test files at a time, instead of running them all at once. To do this, you can run test_runner.py with the -t option in your terminal to only run tests in the files you specify. Note: the test file names you provide must exist in the tests/ directory, or they won't run. 
 
-  Example command to only run tests in test_hw1.py:
-  ```python3 test_runner.py -t test_hw1.py```
+Example command to only run tests in test_hw1.py:
+```python3 test_runner.py -t test_hw1.py```
 
-  You can also run multiple test files by listing the file names after the -t option. 
-  Example command to run multiple test files: 
-  ```python3 test_runner.py -t test_hw1.py test_priority_calculator.py```
+You can also run multiple test files by listing the file names after the -t option. 
+Example command to run multiple test files: 
+```python3 test_runner.py -t test_hw1.py test_priority_calculator.py```
 
-  If you just want to run all tests in the tests/ directory, you can run `python3 test_runner.py` omitting the `-t` flag at the end. This will run all test files with the pattern `test_*.py` inside of the tests/ directory. Make sure all your test file names start with `test_`, or else they will not run.
+If you just want to run all tests in the tests/ directory, you can run `python3 test_runner.py` omitting the `-t` flag at the end. This will run all test files with the pattern `test_*.py` or `impl_*.py` inside of the tests/ directory. Make sure all your test file names start with either `test_` or `impl_`, or else they will not run.
 
 ## Generating Coverage reports
 
