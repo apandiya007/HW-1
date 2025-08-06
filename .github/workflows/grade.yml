@@ -31,7 +31,7 @@ on:
 jobs:
   grade:
     name: Submit and Grade Assignment
-    runs-on: ubuntu-latest
+    runs-on: khoury-course-runners #Prod
     steps:
       - name: Checkout
         id: checkout
