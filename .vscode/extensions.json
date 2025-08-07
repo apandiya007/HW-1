@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    "ms-python.pylint",        // Pylint linter
+    "matangover.mypy"          // Mypy type checker
+  ]
+}
