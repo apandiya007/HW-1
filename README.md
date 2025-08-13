@@ -57,7 +57,7 @@ Based on their inputs to the questions asked, students receive a score that is u
 
    You are free to choose your own scoring system, but you will need to explain why you made those choices. 
 
-2. **Document** your scoring system in `SUMMARY.md` - you'll need this for writing tests that conform to this exact specification!
+2. **Document** your scoring system in `Summary.md` - you'll need this for writing tests that conform to this exact specification!
 
 ### Part 3: Complete the tests files in the tests/ directory
  
@@ -184,7 +184,7 @@ These reports indicate how much of your code is being executed by your tests. Th
    * `test_question_asker.py` (fully implemented)
    * `test_priority_calculator.py` (fully implemented)
    * `test_hw1.py` (fully implemented)
-   * `SUMMARY.md` (completed with scoring rationale)
+   * `Summary.md` (completed with scoring rationale)
 
 2. **Submit** the repository link on Canvas.
 
@@ -192,6 +192,6 @@ These reports indicate how much of your code is being executed by your tests. Th
 - **Test Quality**: Comprehensive, well-designed tests that cover edge cases (30%)
 - **Implementation**: All methods work correctly and make tests pass (25%)
 - **Object-Oriented Design**: Proper separation of concerns between classes (20%)
-- **Documentation**: Complete SUMMARY.md with clear scoring rationale (25%)
+- **Documentation**: Complete Summary.md with clear scoring rationale (25%)
 
-Feel free to ask questions on Piazza if anything is unclear. Good luck!
+Good luck!
