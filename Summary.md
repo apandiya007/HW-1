@@ -29,14 +29,6 @@ Answer all the questions. Please put your answers *after* the italicized instruc
 
 ---  
 
-### What was your AI usage?   
-*State explicitly (yes or no) whether you used AI. If so, say which tools you used and what your prompts were. Your assignment will not be graded if you do not answer this question.*    
-
-[1 point] 
-* *"I used ChatGPT to brainstorm additional yes/no questions; prompt: 'Suggest two easy yes/no criteria for housing priority.'"*  
-
----  
-
 ### What resources did you use?   
 *Please give specific URLs (not "Stack Overflow" or "Google") and state which ones were particularly helpful.*    
 
