@@ -177,7 +177,7 @@ A link to the a html page containing the coverage reports will be produced in th
 These reports indicate how much of your code is being executed by your tests. This is a purely syntactic check, and having full coverage does not necessarily mean your tests are sufficient, but it's a good starting point. You should aim to have full coverage (ie. every line of your code gets executed by your tests)
 
 ## Submission Instructions
-1. **Push** all files to your repository:
+Push all files to your repository:
    * `question_asker.py` (fully implemented)
    * `priority_calculator.py` (fully implemented)
    * `hw1.py` (fully implemented)
@@ -185,8 +185,6 @@ These reports indicate how much of your code is being executed by your tests. Th
    * `test_priority_calculator.py` (fully implemented)
    * `test_hw1.py` (fully implemented)
    * `Summary.md` (completed with scoring rationale)
-
-2. **Submit** the repository link on Canvas.
 
 ## Grading Rubric
 - **Test Quality**: Comprehensive, well-designed tests that cover edge cases (30%)
