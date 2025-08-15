@@ -1,6 +1,7 @@
-# HW 1: Housing Priority Calculator
+> [!CAUTION]
+> This repository is for viewing only. Do not work on the assignment using this repository -- the actual course assignments will be provided to you via Pawtograder.
 
-**Note: This repository is for viewing only. Do not work on the assignment using this repository -- the actual course assignments will be provided to you via Pawtograder.**
+# HW 1: Housing Priority Calculator
 
 ## Learning Outcomes
 - Practice writing tests
