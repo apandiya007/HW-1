@@ -75,7 +75,7 @@ The tests in file names starting with `test_`, on the other hand, are interface 
 
 For this assignment, you do not have to worry about segregating your tests into `test_` and `impl_` files, as we have already provided partially written tests in the appropriate files, but pay attention to why the tests have been split this way in the provided handout. 
 
-You must write all interface tests (`test_*.py`) before 
+You must write all interface tests (`test_*.py`) before implementing your functions.
 #### 3a. Complete `test_question_asker.py`
 - **Write tests** for input validation and error handling
 - **Test** invalid input followed by valid input scenarios
