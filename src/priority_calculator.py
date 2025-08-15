@@ -31,7 +31,6 @@ class HousingPriorityCalculator:
         
         DON'T IMPLEMENT UNTIL YOU'VE WRITTEN YOUR TESTS!
         """
-        # DON'T IMPLEMENT UNTIL YOU'VE WRITTEN YOUR TESTS!
         pass
 
     def points_for_graduation(self, is_graduating: bool) -> int:
