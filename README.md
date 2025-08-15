@@ -13,7 +13,7 @@
 Welcome to your first programming assignment of the semester! In this assignment you will be building a housing "priority score" engine in Python that decides who gets the first pick of campus housing. You'll dive into human-centered design—chatting with users, uncovering their needs, and iterating on your plan—while mastering Python basics: grabbing input, crafting if/elif/else logic, performing arithmetic, and tallying up points.
 
 ## NOTE
-Although this assignment primarily focuses on writing tests before implementation, it should be general practice to formalize and think about concrete examples first before you writing code.
+Although this assignment primarily focuses on writing tests before implementation, it should be general practice to formalize and think about concrete examples first before writing code.
 
 
 This assignment introduces you to **object-oriented programming** by separating functionality into distinct classes:
