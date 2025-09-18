@@ -11,108 +11,61 @@ Step 2: Run tests (they should fail) - this is expected!
 Step 3: Implement methods below to make tests pass
 Step 4: Run tests again to verify they pass
 """
+from typing import Dict
 
 class HousingQuestionAsker:
     """Class responsible for asking questions and gathering user input."""
 
     def ask_class_year(self) -> int:
-        """Ask the student for their class year and return it as int.
+        while True:
+            try:
+                year_str = input("Please enter your class year: 1 = Freshman, 2 = Sophomore, 3 = Junior, 4 = Senior ")
+                year = int(year_str)
+                if year in (1, 2, 3, 4):
+                    return year
+                print("Invalid input. Please enter 1, 2, 3, or 4")
+            except ValueError:
+                print("Invalid input. Please enter a number from 1-4")
+
+            
         
-        Requirements based on tests:
-        - Prompt for class year (1=Freshman, 2=Sophomore, 3=Junior, 4=Senior)
-        - Only accept integers 1-4
-        - Handle invalid input gracefully (keep asking until valid)
-        - Return the class year as an integer
-        
-        DO NOT IMPLEMENT until tests are written!
-        
-        Implement after writing tests
-        Your implementation should:
-        1. Display a clear prompt
-        2. Get user input
-        3. Validate input (must be 1, 2, 3, or 4)
-        4. Handle invalid input by asking again
-        5. Return the valid integer
-        """
-        pass
 
     def ask_graduation_status(self) -> bool:
-        """Ask if the student is graduating this semester.
+        while True:
+            status = input("Are you graduating this semester? (y/n): ").strip().lower()
+            if status in ("y", "n" ):
+                return status == "y"
+            print("Invalid input. Please enter 'y' or 'n' ")
         
-        Requirements based on tests:
-        - Prompt: "Are you graduating this semester? (y/n)"
-        - Accept 'y', 'Y', 'n', 'N'
-        - Return True for yes, False for no
-        - Handle invalid input gracefully (keep asking until valid)
-        
-        NOTE: This method should ONLY be called for seniors (class year 4)
-        The logic for when to call this is handled in hw1.py
-        
-        DO NOT IMPLEMENT until tests are written!
-        
-        Implement after writing tests
-        Your implementation should:
-        1. Display a clear prompt
-        2. Get user input
-        3. Validate input (must be y/Y/n/N)
-        4. Handle invalid input by asking again
-        5. Return True for y/Y, False for n/N
-        """
-        pass
-
     def ask_credits_earned(self) -> int:
-        """Ask for credits earned and return as int.
+        while True:
+            try:
+                credits_str = input("How many credits have you earned? ")
+                credits = int(credits_str)
+                if credits >= 0:
+                    return credits
+                print("Invalid input. Credits can't be negative. ")
+            except ValueError:
+                 print("Invalid input. Please enter a non-negative integer ")
+       
+    def ask_additional_questions(self) -> Dict[str, bool]:
+        responses: Dict[str, bool] = {}
+    
+        # Q1: asks user if they are an athlete
+        while True:
+            ans1 = input("Are you a student athlete? (y/n): ").strip().lower()
+            if ans1 in ("y", "n" ):
+                responses["athlete"] = ans1 == "y"
+                break
+            print("Invalid input. Please enter 'y' or 'n' ")
         
-        Requirements based on tests:
-        - Prompt: "How many credits have you earned?"
-        - Accept any non-negative integer (0 or higher)
-        - Handle invalid input gracefully (non-numbers, negative numbers)
-        - Return the valid integer
+        # Q2: asks user if they are a first gen college student
+        while True:
+            ans2 = input("Are you a first-generation college student? (y/n): ").strip().lower()
+            if ans2 in ("y", "n" ):
+                responses["first_gen"] = ans2 == "y"
+                break
+            print("Invalid input. Please enter 'y' or 'n' ")
         
-        DO NOT IMPLEMENT until tests are written!
+        return responses
         
-        Implement after writing tests
-        Your implementation should:
-        1. Display a clear prompt
-        2. Get user input
-        3. Validate input (must be non-negative integer)
-        4. Handle invalid input by asking again
-        5. Return the valid integer
-        """
-        pass
-
-    def ask_additional_questions(self) -> dict[str, bool]:
-        """Ask at least two yes/no questions and return a dict of responses.
-        
-        Requirements based on tests:
-        - Ask exactly 2 additional yes/no questions
-        - Accept 'y', 'Y', 'n', 'N' for each question
-        - Handle invalid input gracefully for each question
-        - Return a dictionary with descriptive keys and boolean values
-        
-        Example questions you might ask:
-        - "Are you older than 23?" (key: 'old23')
-        - "Are you in the honors program?" (key: 'honors')
-        - "Are you a student athlete?" (key: 'athlete')
-        - "Do you have work-study?" (key: 'work_study')
-        
-        Choose your own questions, but make sure your test keys match!
-        
-        DO NOT IMPLEMENT until tests are written!
-        
-        Implement after writing tests
-        Your implementation should:
-        1. Ask your first question with clear prompt
-        2. Validate input (y/Y/n/N)
-        3. Ask your second question with clear prompt
-        4. Validate input (y/Y/n/N)
-        5. Handle invalid input for both questions
-        6. Return dict with 2 keys and boolean values
-        
-        Example structure:
-        return {
-            'your_first_key': boolean_result_1,
-            'your_second_key': boolean_result_2 
-            }
-        """
-        pass
